@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/simple-http-reverse-proxy",
+            "args": [
+                "--addr=0.0.0.0:8089",
+                "--config=./sample/config.yml",
+                "--static=./sample/"
+            ]
+        }
+    ]
+}

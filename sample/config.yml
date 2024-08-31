@@ -1,0 +1,3 @@
+hosts:
+  - path: tv
+    host: http://192.168.1.104
