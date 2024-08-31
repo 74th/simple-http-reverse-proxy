@@ -1,3 +1,5 @@
 hosts:
   - path: tv
     host: http://192.168.1.104
+  - path: bedroom-aircon
+    host: http://192.168.1.109
