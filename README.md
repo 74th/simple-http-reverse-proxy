@@ -24,5 +24,5 @@ http://localhost:8089/tv/sht31 にアクセスすると http://192.168.1.104/sht
 ## install
 
 ```
-go install github.com/74th/simple-http-reverse-proxy@latest
+go install github.com/74th/simple-http-reverse-proxy/cmd/simple-http-reverse-proxy@latest
 ```
