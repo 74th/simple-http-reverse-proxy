@@ -11,10 +11,10 @@ import (
 type Server struct {
 	addr        string
 	publicDir   string
-	HostsConfig *HostsConfigRoot
+	HostsConfig *ConfigRoot
 }
 
-func NewServer(addr string, hostsConfig *HostsConfigRoot, publicDir string) *Server {
+func NewServer(addr string, hostsConfig *ConfigRoot, publicDir string) *Server {
 	return &Server{
 		addr:        addr,
 		publicDir:   publicDir,
@@ -37,7 +37,13 @@ func (s *Server) Run() {
 				orgURL := req.URL.String()
 				req.URL.Scheme = targetURL.Scheme
 				req.URL.Host = targetURL.Host
-				req.URL.Path = targetURL.Path + req.URL.Path[len(c.Path)+1:]
+				if len(c.Path) > 0 {
+					req.URL.Path = targetURL.Path + req.URL.Path[len(c.Path)+1:]
+				}
+				for k, v := range c.Headers {
+					req.Header.Set(k, v)
+				}
+
 				dstURL := req.URL.String()
 				log.Printf("Proxying request %s -> %s", orgURL, dstURL)
 			},

@@ -3,7 +3,7 @@
 🇯🇵 設定ファイルに従って複数ホストにパスでプロキシするリバースプロキシ
 
 ```yaml
-# config.yaml
+# config.yml
 hosts:
   - path: tv
     host: http://192.168.1.104
